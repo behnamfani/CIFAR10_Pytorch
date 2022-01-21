@@ -50,6 +50,6 @@ These are the history of accuracies and losses of the model running on trainset 
 
 And Finally, this is model accuracy and loss for testset:
 
-Test_Accuracy = 0.6563495222929936, Test_Loss = 0.9756606817245483
+Test_Accuracy = 0.66, Test_Loss = 0.9756
 
 [1]: https://www.cs.toronto.edu/~kriz/cifar.html
