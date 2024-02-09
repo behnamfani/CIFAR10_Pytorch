@@ -46,7 +46,7 @@ Net(
 
 These are the history of accuracies and losses of the model running on trainset during training:
 
-![](acc.png)
+![](reports/acc.png)
 
 And Finally, this is model accuracy and loss for testset:
 
