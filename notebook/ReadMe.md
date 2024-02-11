@@ -1,0 +1,1 @@
+nbviewer for rendering properly: [https://nbviewer.org/github/behnamfani/CIFAR10_Pytorch/blob/main/notebook/PyTorch_CIFAR10.ipynb](https://nbviewer.org/github/behnamfani/CIFAR10_Pytorch/blob/main/notebook/PyTorch_CIFAR10.ipynb)
