@@ -1,55 +1,66 @@
-# CIFAR10_Pytorch
-Creating a Convolutional Neural Network for CIFAR10 [1] dataset
+# CIFAR-10 Classification with PyTorch
 
-In this project, I built a CNN to learn and predict CIFAR10. 
+A **Convolutional Neural Network (CNN)** built using **PyTorch** to classify images from the **CIFAR-10** dataset.
 
-Libraries I am using are:
+---
 
-<pre>
--import torch
--import torchvision
--import torch.nn as nn
--import torch.nn.functional as F
--import torch.optim as optim
--import torchvision.transforms as transforms
--import matplotlib.pyplot as plt 
--import matplotlib.pyplot as plt
--from matplotlib import style
--import numpy as np
--import cv2
--from tqdm import tqdm
-</pre>
+## 📌 Overview
+This project implements a CNN to learn and predict the **CIFAR-10** dataset. The model supports both **CPU** and **GPU** training.
 
-We can run this model on GPU as well:
+---
 
+## 🛠️ Libraries Used
+```python
+import torch
+import torchvision
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
+import torchvision.transforms as transforms
+import matplotlib.pyplot as plt
+import numpy as np
+import cv2
+from tqdm import tqdm
+```
+
+---
+
+## 🖥️ Hardware Support
+The model automatically detects and uses **GPU** if available:
+```python
 if torch.cuda.is_available():
-  print('Run on GPU')
-  device = torch.device("cuda:0")
+    print('Run on GPU')
+    device = torch.device("cuda:0")
 else:
-  print('Run on CPU')
-  device = torch.device("cpu")
-  
-First, the program downloads the CIFAR10 dataset and creates a trainset and a testset.
+    print('Run on CPU')
+    device = torch.device("cpu")
+```
 
-Then, this is the model that the program creates, trains, and predicts with:
+---
 
-<pre>
-Net(
-  (conv1): Conv2d(3, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-  (conv2): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-  (conv3): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-  (fc1): Linear(in_features=2048, out_features=120, bias=True)
-  (fc2): Linear(in_features=120, out_features=84, bias=True)
-  (fc3): Linear(in_features=84, out_features=10, bias=True)
-)
-</pre>
+## 📊 Model Architecture
+The CNN architecture consists of:
+- **3 Convolutional Layers**:
+  - `Conv2d(3, 32, kernel_size=3, stride=1, padding=1)`
+  - `Conv2d(32, 64, kernel_size=3, stride=1, padding=1)`
+  - `Conv2d(64, 128, kernel_size=3, stride=1, padding=1)`
+- **3 Fully Connected Layers**:
+  - `Linear(in_features=2048, out_features=120)`
+  - `Linear(in_features=120, out_features=84)`
+  - `Linear(in_features=84, out_features=10)`
 
-These are the history of accuracies and losses of the model running on trainset during training:
+---
 
-![](reports/acc.png)
+## 📈 Training and Evaluation
+- The program downloads the **CIFAR-10** dataset and splits it into **trainset** and **testset**.
+- **Training History**:
+  ![Training Accuracy and Loss](reports/acc.png)
 
-And Finally, this is model accuracy and loss for testset:
+- **Test Performance**:
+  - **Test Accuracy**: 0.66
+  - **Test Loss**: 0.9756
 
-Test_Accuracy = 0.66, Test_Loss = 0.9756
+---
 
-[1]: https://www.cs.toronto.edu/~kriz/cifar.html
+## 📚 Dataset Reference
+[1] [CIFAR-10 Dataset](https://www.cs.toronto.edu/~kriz/cifar.html)
